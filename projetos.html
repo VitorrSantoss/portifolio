@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Projetos — Vitor Santos</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <style>
+      /* Estilos para as tarjas "em breve" */
+      .project-placeholder {
+        position: relative;
+        overflow: hidden;
+      }
+
+      .coming-soon-banner {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 8px 40px;
+        font-size: 14px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        white-space: nowrap;
+        z-index: 2;
+        border: 2px solid #fff;
+      }
+
+      /* Modal para visualização prévia */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        animation: fadeIn 0.3s;
+      }
+
+      .modal-content {
+        position: relative;
+        margin: auto;
+        padding: 20px;
+        width: 90%;
+        max-width: 800px;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+      }
+
+      .modal img {
+        max-width: 100%;
+        max-height: 70vh;
+        border-radius: 8px;
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        color: #fff;
+        font-size: 35px;
+        font-weight: bold;
+        cursor: pointer;
+        z-index: 1001;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #ccc;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      .modal-placeholder {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 60px;
+        border-radius: 8px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="nav">
+      <div class="nav-inner container">
+        <div class="brand">
+          <span class="brand-logo" aria-hidden="true"></span>
+          <a href="index.html">Vitor Santos</a>
+        </div>
+        <div class="links" role="navigation" aria-label="Primary">
+          <a class="link" href="index.html">Sobre mim</a>
+          <a class="link" href="formacao.html">Formação</a>
+          <a class="link active" href="projetos.html">Projetos</a>
+          <a class="link" href="habilidades.html">Habilidades</a>
+          <a class="link" href="contatos.html">Contatos</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container section">
+      <h2 class="h-lg">
+        Projetos
+        <span class="badge">Desenvolvimento</span>
+      </h2>
+      <p class="muted">
+        Aqui você encontrará os principais projetos que desenvolvi, demonstrando
+        minhas habilidades técnicas e criatividade.
+      </p>
+
+      <div class="space"></div>
+
+      <!-- Projetos Principais -->
+      <section>
+        <h3 class="h">Projetos Principais</h3>
+        <div class="space"></div>
+
+        <div class="grid grid-2">
+          <!-- Projeto 1 -->
+          <article class="project-card">
+            <div class="project-thumb project-placeholder">
+              <div
+                style="
+                  width: 100%;
+                  height: 200px;
+                  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                  font-size: 14px;
+                  border-radius: 8px;
+                  position: relative;
+                "
+              >
+                <img
+                  src="/assets/CERTIFICADO 1.jpg"
+                  alt=""
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 8px;
+                  "
+                />
+              </div>
+            </div>
+            <div>
+              <h4 class="h">Projeto em Desenvolvimento</h4>
+              <p class="muted">
+                Breve descrição do projeto será adicionada aqui quando estiver
+                pronto.
+              </p>
+              <div class="space"></div>
+              <div class="link-row">
+                <a href="#" class="btn">Ver repositório</a>
+                <a href="#" class="btn ghost" onclick="openModal('modal1')"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </article>
+
+          <!-- Projeto 2 -->
+          <article class="project-card">
+            <div class="project-thumb project-placeholder">
+              <div
+                style="
+                  width: 100%;
+                  height: 200px;
+                  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  color: white;
+                  font-size: 14px;
+                  border-radius: 8px;
+                  position: relative;
+                "
+              ></div>
+            </div>
+            <div>
+              <h4 class="h">Projeto em Desenvolvimento</h4>
+              <p class="muted">
+                Breve descrição do projeto será adicionada aqui quando estiver
+                pronto.
+              </p>
+              <div class="space"></div>
+              <div class="link-row">
+                <a href="#" class="btn">Ver repositório</a>
+                <a href="#" class="btn ghost" onclick="openModal('modal2')"
+                  >Demo</a
+                >
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <div class="space"></div>
+
+      <!-- Outros Projetos -->
+      <section>
+        <h3 class="h">Outros Projetos</h3>
+        <div class="space"></div>
+
+        <div class="grid grid-3">
+          <div class="card pad hover">
+            <div
+              class="project-placeholder"
+              style="
+                width: 100%;
+                height: 120px;
+                background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+                margin-bottom: 16px;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 12px;
+                position: relative;
+              "
+            >
+              <div
+                class="coming-soon-banner"
+                style="font-size: 10px; padding: 4px 20px"
+              >
+                Em Breve
+              </div>
+            </div>
+            <strong>Projeto A</strong>
+            <p class="muted">Descrição será adicionada em breve.</p>
+          </div>
+
+          <div class="card pad hover">
+            <div
+              class="project-placeholder"
+              style="
+                width: 100%;
+                height: 120px;
+                background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+                margin-bottom: 16px;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 12px;
+                position: relative;
+              "
+            >
+              <div
+                class="coming-soon-banner"
+                style="font-size: 10px; padding: 4px 20px"
+              >
+                Em Breve
+              </div>
+            </div>
+            <strong>Projeto B</strong>
+            <p class="muted">Descrição será adicionada em breve.</p>
+          </div>
+
+          <div class="card pad hover">
+            <div
+              class="project-placeholder"
+              style="
+                width: 100%;
+                height: 120px;
+                background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+                margin-bottom: 16px;
+                border-radius: 6px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 12px;
+                position: relative;
+              "
+            >
+              <div
+                class="coming-soon-banner"
+                style="font-size: 10px; padding: 4px 20px"
+              >
+                Em Breve
+              </div>
+            </div>
+            <strong>Projeto C</strong>
+            <p class="muted">Descrição será adicionada em breve.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Modais para visualização prévia -->
+    <div id="modal1" class="modal" onclick="closeModal('modal1')">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closeModal('modal1')">&times;</span>
+        <h3 style="color: white; margin-bottom: 20px">
+          Visualização Prévia - Projeto 1
+        </h3>
+        <img
+          src="/assets/CERTIFICADO 1.jpg"
+          alt="Projeto 1"
+          onerror="this.style.display='none'; this.nextElementSibling.style.display='block';"
+        />
+        <div class="modal-placeholder" style="display: none">
+          <p>Imagem não disponível</p>
+          <p>Projeto em desenvolvimento</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="modal2" class="modal" onclick="closeModal('modal2')">
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close" onclick="closeModal('modal2')">&times;</span>
+        <h3 style="color: white; margin-bottom: 20px">
+          Visualização Prévia - Projeto 2
+        </h3>
+        <div class="modal-placeholder">
+          <p>Preview não disponível</p>
+          <p>Projeto em desenvolvimento</p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openModal(modalId) {
+        document.getElementById(modalId).style.display = "block";
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal(modalId) {
+        document.getElementById(modalId).style.display = "none";
+        document.body.style.overflow = "auto";
+      }
+
+      // Fechar modal com ESC
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          const modals = document.querySelectorAll(".modal");
+          modals.forEach((modal) => {
+            if (modal.style.display === "block") {
+              modal.style.display = "none";
+              document.body.style.overflow = "auto";
+            }
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
