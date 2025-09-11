@@ -5,6 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Habilidades — Vitor Santos</title>
     <link rel="stylesheet" href="assets/style.css" />
+    <style>
+      /* Estilo geral do acordeão */
+      .skills-accordion details {
+        background: #1e1e2f;
+        border-radius: 12px;
+        margin-bottom: 1rem;
+        padding: 0.8rem 1rem;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        transition: all 0.3s ease;
+      }
+
+      .skills-accordion details[open] {
+        background: #292944;
+      }
+
+      /* Cabeçalho (summary) */
+      .skills-accordion summary {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #c084fc;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .skills-accordion summary::-webkit-details-marker {
+        display: none; /* remove seta padrão */
+      }
+
+      /* Ícone personalizado (+ e -) */
+      .skills-accordion summary::after {
+        content: "+";
+        font-size: 1.4rem;
+        color: #c084fc;
+        transition: transform 0.3s ease;
+      }
+      .skills-accordion details[open] summary::after {
+        content: "–";
+        transform: rotate(180deg);
+      }
+
+      /* Conteúdo interno */
+      .skills-list {
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+      }
+
+      .pill {
+        background: #562f7e;
+        color: #fff;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: background 0.3s;
+      }
+
+      .pill:hover {
+        background: #a855f7;
+      }
+    </style>
   </head>
   <body>
     <nav class="nav">
@@ -24,29 +89,28 @@
     </nav>
 
     <main class="container section">
-      <h2 class="h-lg">Habilidades <span class="badge">Skils</span></h2>
+      <h2 class="h-lg">Habilidades <span class="badge">Skills</span></h2>
       <p class="muted">
-        Soft skills e hard skills separadas com um acordeão nativo
-        (&lt;details&gt;), sem JS.
+        Soft skills e hard skills organizadas em acordeão estilizado.
       </p>
       <div class="space"></div>
 
       <div class="skills-accordion">
         <details open>
-          <summary>Hard Skills</summary>
+          <summary>💻 Hard Skills</summary>
           <div class="skills-list">
             <span class="pill">Java</span>
             <span class="pill">Spring Boot</span>
             <span class="pill">SQL</span>
-            <span class="pill">Html</span>
-            <span class="pill">Boot Strap</span>
-            <span class="pill">Css</span>
-            <span class="pill">Java Script</span>
+            <span class="pill">HTML</span>
+            <span class="pill">Bootstrap</span>
+            <span class="pill">CSS</span>
+            <span class="pill">JavaScript</span>
             <span class="pill">React JS</span>
           </div>
         </details>
         <details>
-          <summary>Soft Skills</summary>
+          <summary>🤝 Soft Skills</summary>
           <div class="skills-list">
             <span class="pill">Pontualidade</span>
             <span class="pill">Comunicação</span>
@@ -58,7 +122,7 @@
           </div>
         </details>
         <details>
-          <summary>Ferramentas & Outros</summary>
+          <summary>🛠️ Ferramentas & Outros</summary>
           <div class="skills-list">
             <span class="pill">Figma</span>
             <span class="pill">Scrum/Kanban</span>
